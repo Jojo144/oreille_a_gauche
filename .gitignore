@@ -1,0 +1,6 @@
+auto-save-list
+db.sqlite3
+__pycache__
+venv
+settings_local.py
+

@@ -1,0 +1,8 @@
+
+.message.success:before {
+    content: "✔ ";
+}
+
+.message.error:before {
+    content: "✘ ";
+}

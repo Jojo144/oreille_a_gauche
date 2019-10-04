@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+	<title>L'oreille à gauche</title>
+	<meta charset="utf-8" />
+    </head>
+    <body>
+	<script src="{% static 'base/jquery-3.3.1.js' %}"></script>
+	<script src="{% static 'base/bootstrap.bundle.js' %}"></script>
+
+	<div class="container">
+	    <div class="row justify-content-center">
+		<h1>L'oreille à gauche</h1>
+	    </div>
+	    <div class="row justify-content-center">
+		{% for message in messages %}
+		<span class="m-1 badge {{ message.tags }} message">{{ message }}</span>
+		{% endfor %}
+		<script>
+		 $("span.message").delay(6000).fadeOut();
+		</script>
+	    </div>
+
+	    <div class="row">
+		<h2>Poster une émission</h2>
+	    </div>
+	    <div class="row">
+		<form action="." method="POST">{% csrf_token %}
+		    {{ form.as_p }}
+		    <input type="submit" class="btn btn-info">
+		</form>
+	    </div>
+
+	    <div class="row">
+		<h2>Les 20 dernières émissions postées</h2>
+	    </div>
+	    <div class="row">
+		L'intégrale des émissions proposée est disponible ici :&nbsp;
+		<a href="https://toot.aquilenet.fr/@oreille_gauche">https://toot.aquilenet.fr/@oreille_gauche</a>
+	    </div>
+	    <div class="row">
+		<table class="table">
+		    {% for toot in toot_list %}
+		    <tr> <td>{{ toot | safe }}</td> </tr>
+		    {% endfor %}
+		</table>
+	    </div>
+	</div>
+    </body>
+</html>
