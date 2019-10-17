@@ -6,3 +6,19 @@
 .message.error:before {
     content: "✘ ";
 }
+
+a .invisible {
+    display: none;
+}
+
+a .ellipsis:after {
+    content: "…"
+}
+
+.top-space {
+    margin-top: 40px;
+}
+
+.small-top-space {
+    margin-top: 20px;
+}
