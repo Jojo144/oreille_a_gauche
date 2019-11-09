@@ -1,5 +1,9 @@
 DEBUG = False
 
+api_base_url = 'https://toot.aquilenet.fr'
+mastodon_user = 'example',
+mastodon_password = 'example',
+
 SECRET_KEY = 'YNH_APP_SECRET_KEY'
 
 ALLOWED_HOSTS = ['localhost', 'YNH_APP_ARG_DOMAIN']
