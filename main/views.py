@@ -8,9 +8,11 @@ from mastodon import Mastodon
 from oag.settings import api_base_url, mastodon_user, mastodon_password
 
 
-mastodon = Mastodon(api_base_url = api_base_url)
-
-mastodon.log_in(mastodon_user, mastodon_password)
+try:
+    mastodon = Mastodon(api_base_url = api_base_url)
+    mastodon.log_in(mastodon_user, mastodon_password)
+except:
+    pass
 
 
 class TootForm(forms.Form):
