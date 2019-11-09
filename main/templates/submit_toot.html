@@ -14,7 +14,7 @@
 	<script src="{% static 'base/bootstrap.bundle.js' %}"></script>
 
 	<div class="container">
-	    <div class="row justify-content-center">
+	    <div class="row justify-content-center small-top-space">
 		<h1>L'oreille à gauche</h1>
 	    </div>
 	    <div class="row justify-content-center">
@@ -37,11 +37,11 @@
 		    <li>éventuellement un pseudo</li>
 		</ul>
 	    </div>
-	<div class="row small-top-space">
+	    <div class="row small-top-space">
 		<h2>Poster une émission</h2>
 	    </div>
 	    <div class="row">
-		<form action="." method="POST">{% csrf_token %}
+		<form action="." method="POST" style="width: 100%">{% csrf_token %}
 		    {{ form.as_p }}
 		    <button type="submit" class="btn btn-info">Publier</button>
 		</form>
@@ -57,17 +57,25 @@
 	    <div class="row">
 		{% for toot in toot_list %}
 		<div class="card" style="width: 32rem; margin: 1rem">
+
+		    <div class="card-img-top" style="overflow:hidden; height: 14rem">
+			<img style="width: 32rem; clip-path: content-box;" src="{{ toot.image | safe}}">
+		    </div>
 		    <div class="card-body">
+			<h5 class="card-title">
+			    {{ toot.title | safe}}
+			</h5>
 			<p class="card-text" >
-			    {{ toot | safe}}
+			    {{ toot.content | safe}}
 			</p>
 		    </div>
 		</div>
 		{% endfor %}
 	    </div>
-	    <div class ="row">
+	    <div class ="row top-space">
 		✉ Suggestions, questions : oag@girole.fr
 	    </div>
+	    <div class ="row top-space"></div>
 	</div>
 	<script>
 	 $("span.message").delay(6000).fadeOut();

@@ -3,6 +3,8 @@ from django.views.generic.edit import FormView
 from django.contrib import messages
 from django import forms
 
+from django.contrib.staticfiles.templatetags.staticfiles import static
+
 from mastodon import Mastodon
 
 from oag.settings import api_base_url, mastodon_user, mastodon_password
@@ -18,9 +20,20 @@ except:
 class TootForm(forms.Form):
     toot = forms.CharField(
         label='',
-        widget=forms.Textarea(attrs={"rows":4, "cols":80}),
+        widget=forms.Textarea(attrs={"rows":4, 'style': 'width: 100%;'}),
         max_length=500,
     )
+
+
+def content_of_toot(t):
+    d = {'content': t['content']}
+    if t['card'] is not None:
+        d['image'] = t['card']['image']
+        d['title'] = t['card']['title']
+    else:
+        d['image'] = static('default_card_image.jpg')
+    return d
+
 
 class SubmitTootView(FormView):
     template_name = 'submit_toot.html'
@@ -29,7 +42,7 @@ class SubmitTootView(FormView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        ctx['toot_list'] = [t['content'] for t in mastodon.timeline_home(limit=20)]
+        ctx['toot_list'] = [content_of_toot(t) for t in mastodon.timeline_home(limit=20)]
         return ctx
 
     def form_valid(self, form):
