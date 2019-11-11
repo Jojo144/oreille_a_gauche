@@ -11,9 +11,9 @@ path="/" # for the moment the app works only at root
 admin=$YNH_APP_ARG_ADMIN
 passwd=$YNH_APP_ARG_PASSWD
 email=$YNH_APP_ARG_EMAIL
-api_base_url=$YNH_APP_API_BASE_URL
-mastodon_user=$YNH_APP_MASTODON_USER
-mastodon_password=$YNH_APP_MASTODON_PASSWORD
+api_base_url=$YNH_APP_ARG_API_BASE_URL
+mastodon_user=$YNH_APP_ARG_MASTODON_USER
+mastodon_password=$YNH_APP_ARG_MASTODON_PASSWORD
 
 final_path=/opt/$app
 
