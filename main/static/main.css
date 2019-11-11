@@ -22,3 +22,7 @@ a .ellipsis:after {
 .small-top-space {
     margin-top: 20px;
 }
+
+.neg-tiny-top-space {
+    margin-top: -10px;
+}
