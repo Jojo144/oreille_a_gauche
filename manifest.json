@@ -58,6 +58,29 @@
                     "fr": "Choisissez l'email vers lequel envoyer les notifications"
                 },
                 "example": "admin@example.tld"
+	    },
+            {
+                "name": "api_base_url",
+                "type": "string",
+                "ask": {
+                    "fr": "Instance Mastodon"
+                },
+                "example": "toot.toto.net"
+            },
+            {
+                "name": "mastodon_user",
+                "type": "string",
+                "ask": {
+                    "fr": "Utilisateur Mastodon"
+                },
+                "example": "toto@pouet.com",
+            },
+            {
+                "name": "mastodon_password",
+                "type": "password",
+                "ask": {
+                    "fr": "Mot de passe Mastodon"
+                }
             }
         ]
     }

@@ -1,8 +1,8 @@
 DEBUG = False
 
-api_base_url = 'https://toot.aquilenet.fr'
-mastodon_user = 'example',
-mastodon_password = 'example',
+api_base_url = 'YNH_APP_API_BASE_URL'
+mastodon_user = 'YNH_APP_MASTODON_USER',
+mastodon_password = 'YNH_APP_MASTODON_PASSWORD',
 
 SECRET_KEY = 'YNH_APP_SECRET_KEY'
 

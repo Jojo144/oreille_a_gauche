@@ -11,6 +11,9 @@ path="/" # for the moment the app works only at root
 admin=$YNH_APP_ARG_ADMIN
 passwd=$YNH_APP_ARG_PASSWD
 email=$YNH_APP_ARG_EMAIL
+api_base_url=$YNH_APP_API_BASE_URL
+mastodon_user=$YNH_APP_MASTODON_USER
+mastodon_password=$YNH_APP_MASTODON_PASSWORD
 
 final_path=/opt/$app
 
@@ -63,6 +66,9 @@ ynh_replace_string "YNH_APP_ARG_DOMAIN" $domain $settings_local
 ynh_replace_string "YNH_APP_ARG_PATH" $path $settings_local
 ynh_replace_string "YNH_APP_ARG_EMAIL" $email $settings_local
 ynh_replace_string "YNH_APP_SECRET_KEY" $secret $settings_local
+ynh_replace_string "YNH_APP_API_BASE_URL" $api_base_url $settings_local
+ynh_replace_string "YNH_APP_MASTODON_USER" $mastodon_user $settings_local
+ynh_replace_string "YNH_APP_MASTODON_PASSWORD" $mastodon_password $settings_local
 ynh_replace_string "YNH_APP_STATIC_ROOT" $final_path/static $settings_local
 
 # Set permissions
@@ -107,7 +113,7 @@ sudo cp ../conf/gunicorn_config.py $final_path
 sudo service nginx reload
 sudo systemctl start $app
 sudo systemctl enable $app
-sudo yunohost service add $app -l /var/log/gunicorn/$app.log
+sudo yunohost service add $app -l /var/log/$app/error.log /var/log/$app/access.log
 
 
 # C'est public ! (pas de SSO ynh)
