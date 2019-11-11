@@ -73,7 +73,7 @@
                 "ask": {
                     "fr": "Utilisateur Mastodon"
                 },
-                "example": "toto@pouet.com",
+                "example": "toto@pouet.com"
             },
             {
                 "name": "mastodon_password",
