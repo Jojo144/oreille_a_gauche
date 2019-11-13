@@ -38,7 +38,8 @@
 		</ul>
 	    </div>
 	    <div class="row neg-tiny-top-space">
-		Les titres et images sont générés automatiquement.
+		Les titres, images et description sont générés automatiquement quand le
+		site le supporte.
 	    </div>
 	    <div class="row small-top-space">
 		<h2>Poster une émission</h2>
@@ -59,19 +60,30 @@
 	    </div>
 	    <div class="row">
 		{% for toot in toot_list %}
-		<div class="card" style="width: 32rem; margin: 1rem">
-
-		    <div class="card-img-top" style="overflow:hidden; height: 14rem">
-			<img style="width: 32rem; clip-path: content-box;" src="{{ toot.image | safe}}">
+		<div class="card">
+		    <div class="card-img-top">
+			    <img  src="{{ toot.image | safe}}">
 		    </div>
+            {% if toot.card.title or toot.card.description %}
 		    <div class="card-body">
-			<h5 class="card-title">
-			    {{ toot.title | safe}}
-			</h5>
-			<p class="card-text" >
-			    {{ toot.content | safe}}
-			</p>
-		    </div>
+                {% if toot.card.title %}
+			    <h5 class="card-title">
+			        {{ toot.card.title | safe}}
+			    </h5>
+                {% endif %}
+                {% if toot.card.description %}
+			    <div class="card-text" >
+               {{ toot.card.description }}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+		    <div class="card-body bg-light">
+			    </p>
+                <div class="card-text description">
+                    {{ toot.content | safe}}
+                </div>
+            </div>
 		</div>
 		{% endfor %}
 	    </div>
