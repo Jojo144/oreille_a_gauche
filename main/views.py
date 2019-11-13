@@ -28,8 +28,8 @@ class TootForm(forms.Form):
 def content_of_toot(t):
     d = {'content': t['content']}
     if t['card'] is not None:
+        d['card'] = t['card']
         d['image'] = t['card']['image']
-        d['title'] = t['card']['title']
     else:
         d['image'] = static('default_card_image.jpg')
     return d

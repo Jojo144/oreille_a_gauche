@@ -26,3 +26,19 @@ a .ellipsis:after {
 .neg-tiny-top-space {
     margin-top: -10px;
 }
+.description {
+    font-style: italic;
+}
+
+.card {
+    width: 400px;
+    margin: 2rem;
+}
+.card-img-top {
+    overflow:hidden;
+    height: 14rem;
+}
+img {
+    width: 400px;
+    clip-path: content-box;
+}
