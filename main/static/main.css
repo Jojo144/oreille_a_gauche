@@ -34,6 +34,9 @@ a .ellipsis:after {
     width: 400px;
     margin: 2rem;
 }
+.cards {
+    justify-content: left;
+}
 .card-img-top {
     overflow:hidden;
     height: 14rem;
