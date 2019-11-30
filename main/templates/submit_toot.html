@@ -14,38 +14,48 @@
 	<script src="{% static 'base/bootstrap.bundle.js' %}"></script>
 
 	<div class="container">
+	    {% if messages  %}
 	    <div class="row justify-content-center small-top-space">
-		<h1>L'oreille à gauche</h1>
-	    </div>
-	    <div class="row justify-content-center">
 		{% for message in messages %}
 		<span class="m-1 badge {{ message.tags }} message">{{ message }}</span>
 		{% endfor %}
 	    </div>
-
-	    <div class="row small-top-space">
-		Une liste collaborative d'émissions. Féminisme, écologie, classes sociales, nouveaux points de vue, histoires touchantes, clés pour comprendre le monde, autogestion, aventures collectives et émancipatrices, récits d'ici et d'ailleurs, de maintenant et d'hier, châtaignes et sureau, ...
+	    {% endif %}
+	    <div class="row small-top-space" style="align-items: center; flex-direction: row-reverse">
+		<div class="col-md-5 col-12">
+		    <img src="{% static 'oreille.png' %}" class="img-fluid">
+		</div>
+		<div class="col-12 col-md-7 justify-content-center small-top-space">
+		    <h1>L'oreille à gauche</h1>
+		    <div class ="top-space" style="text-align: justify; font-style: italic">
+			Une liste collaborative d'émissions. Féminisme, écologie,
+			classes sociales, nouveaux points de vue, histoires touchantes,
+			clés pour comprendre le monde, autogestion, aventures collectives
+			et émancipatrices, récits d'ici et d'ailleurs, de maintenant et
+			d'hier, châtaignes et sureau, ...
+		    </div>
+		    <div class="top-space">
+			<h5>Conseils de publication</h5>
+		    </div>
+		    <div>
+			<ul>
+			    <li>d'abord un lien</li>
+			    <li>éventuellement le sujet de l'émission</li>
+			    <li>éventuellement un petit commentaire</li>
+			    <li>éventuellement un pseudo</li>
+			</ul>
+		    </div>
+		    <div class="neg-tiny-top-space">
+			Les titres, images et description sont générés automatiquement quand le
+			site le supporte.
+		    </div>
+		</div>
 	    </div>
-	    <div class="row small-top-space">
-		<h5>Conseils de publication :</h5>
-	    </div>
-	    <div class="row">
-		<ul>
-		    <li>d'abord un lien</li>
-		    <li>éventuellement le sujet de l'émission</li>
-		    <li>éventuellement un petit commentaire</li>
-		    <li>éventuellement un pseudo</li>
-		</ul>
-	    </div>
-	    <div class="row neg-tiny-top-space">
-		Les titres, images et description sont générés automatiquement quand le
-		site le supporte.
-	    </div>
-	    <div class="row small-top-space">
+	    <div class="row top-space">
 		<h2>Poster une émission</h2>
 	    </div>
 	    <div class="row">
-		<form action="." method="POST" style="width: 100%">{% csrf_token %}
+		<form action="." method="POST">{% csrf_token %}
 		    {{ form.as_p }}
 		    <button type="submit" class="btn btn-info">Publier</button>
 		</form>
@@ -62,28 +72,28 @@
 		{% for toot in toot_list %}
 		<div class="card">
 		    <div class="card-img-top">
-			    <img  src="{{ toot.image | safe}}">
+			<img src="{{ toot.image | safe}}">
 		    </div>
-            {% if toot.card.title or toot.card.description %}
+		    {% if toot.card.title or toot.card.description %}
 		    <div class="card-body">
-                {% if toot.card.title %}
-			    <h5 class="card-title">
-			        {{ toot.card.title | safe}}
-			    </h5>
-                {% endif %}
-                {% if toot.card.description %}
-			    <div class="card-text" >
-               {{ toot.card.description }}
-                </div>
-                {% endif %}
-            </div>
-            {% endif %}
+			{% if toot.card.title %}
+			<h5 class="card-title">
+			    {{ toot.card.title | safe}}
+			</h5>
+			{% endif %}
+			{% if toot.card.description %}
+			<div class="card-text" >
+			    {{ toot.card.description }}
+			</div>
+			{% endif %}
+		    </div>
+		    {% endif %}
 		    <div class="card-body bg-light">
 			    </p>
-                <div class="card-text description">
-                    {{ toot.content | safe}}
-                </div>
-            </div>
+			    <div class="card-text description">
+				{{ toot.content | safe}}
+			    </div>
+		    </div>
 		</div>
 		{% endfor %}
 	    </div>

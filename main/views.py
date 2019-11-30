@@ -20,7 +20,7 @@ except:
 class TootForm(forms.Form):
     toot = forms.CharField(
         label='',
-        widget=forms.Textarea(attrs={"rows":4, 'style': 'width: 100%;'}),
+        widget=forms.Textarea(attrs={"rows":4, 'style': 'width: 930px; max-width: 100%'}),
         max_length=500,
     )
 
