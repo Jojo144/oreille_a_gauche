@@ -29,7 +29,10 @@ def content_of_toot(t):
     d = {'content': t['content']}
     if t['card'] is not None:
         d['card'] = t['card']
-        d['image'] = t['card']['image']
+        if t['card']['image'] is not None:
+            d['image'] = t['card']['image']
+        else:
+            d['image'] = static('default_card_image.jpg')
     else:
         d['image'] = static('default_card_image.jpg')
     return d
