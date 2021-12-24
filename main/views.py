@@ -10,12 +10,10 @@ from mastodon import Mastodon
 from oag.settings import api_base_url, mastodon_access_token
 
 
-try:
-    mastodon = Mastodon(api_base_url = api_base_url)
-    mastodon.log_in(mastodon_user, mastodon_password)
-except:
-    pass
-
+mastodon = Mastodon(
+    api_base_url=api_base_url,
+    access_token=mastodon_access_token,
+)
 
 class TootForm(forms.Form):
     toot = forms.CharField(
