@@ -18,3 +18,9 @@ sudo yunohost app install https://github.com/Jojo144/oreille_a_gauche --debug -f
 
 
 -a : arguements Domaine, Admin et Email de l'admin et Mot de passe de l'admin
+
+Upgrade
+---------
+
+La mise à jour n'est pas supportée, désinstaller/réinstaller pour mettre à jour.
+
