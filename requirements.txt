@@ -1,2 +1,2 @@
-Django==2.2.6
-Mastodon.py==1.4.6
+Django>=3.2,<3.3  # LTS
+Mastodon.py>=1.5.1,<1.6
