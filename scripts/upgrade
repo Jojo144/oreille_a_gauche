@@ -3,19 +3,4 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-
-app=$YNH_APP_INSTANCE_NAME
-domain=$(ynh_app_setting_get "$app" domain)
-
-# ynh_backup_before_upgrade
-# ynh_clean_setup () {
-# 	# restore it if the upgrade fails
-# 	ynh_restore_upgradebackup
-# }
-# # Exit if an error occurs during the execution of the script
-# ynh_abort_if_errors
-
-final_path=/opt/$app
-
-cd $final_path && git pull
-sudo systemctl restart $app
+ynh_die "L'upgrade n'est pas supportée"
