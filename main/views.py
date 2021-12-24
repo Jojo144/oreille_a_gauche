@@ -3,11 +3,11 @@ from django.views.generic.edit import FormView
 from django.contrib import messages
 from django import forms
 
-from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.templatetags.static import static
 
 from mastodon import Mastodon
 
-from oag.settings import api_base_url, mastodon_user, mastodon_password
+from oag.settings import api_base_url, mastodon_access_token
 
 
 try:
