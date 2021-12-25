@@ -16,8 +16,7 @@ sudo yunohost app install https://github.com/Jojo144/oreille_a_gauche --debug -f
 -f, --force           Do not ask confirmation if the app is not safe to use
                         (low quality, experimental or 3rd party)
 
-
--a : arguements Domaine, Admin et Email de l'admin et Mot de passe de l'admin
+-a : arguements Domaine, Email de l'admin
 
 Upgrade
 ---------

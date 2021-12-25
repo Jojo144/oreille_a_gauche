@@ -32,24 +32,6 @@
                 },
                 "example": "domain.org"
             },
-            {
-                "name": "admin",
-                "type": "string",
-                "ask": {
-                    "en": "Choose the administrator of your app (does not need to be an existing YunoHost user)",
-                    "fr": "Choisissez l'administrateur de votre application (ne doit pas nécessairement être un utilisateur YunoHost)"
-                },
-                "example": "admin",
-                "default": "admin"
-            },
-            {
-                "name": "passwd",
-                "type": "password",
-                "ask": {
-                    "en": "Choose a password for this administrator",
-                    "fr": "Choisissez un mot de passe pour cet administrateur"
-                }
-            },
 	    {
                 "name": "email",
                 "type": "email",
