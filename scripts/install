@@ -10,8 +10,7 @@ domain=$YNH_APP_ARG_DOMAIN
 path="/" # for the moment the app works only at root
 email=$YNH_APP_ARG_EMAIL
 api_base_url=$YNH_APP_ARG_API_BASE_URL
-mastodon_user=$YNH_APP_ARG_MASTODON_USER
-mastodon_password=$YNH_APP_ARG_MASTODON_PASSWORD
+mastodon_access_token=$YNH_APP_ARG_MASTODON_ACCESS_TOKEN
 
 final_path=/opt/$app
 
@@ -59,8 +58,7 @@ ynh_replace_string "YNH_APP_ARG_PATH" $path $settings_local
 ynh_replace_string "YNH_APP_ARG_EMAIL" $email $settings_local
 ynh_replace_string "YNH_APP_SECRET_KEY" $secret $settings_local
 ynh_replace_string "YNH_APP_API_BASE_URL" $api_base_url $settings_local
-ynh_replace_string "YNH_APP_MASTODON_USER" $mastodon_user $settings_local
-ynh_replace_string "YNH_APP_MASTODON_PASSWORD" $mastodon_password $settings_local
+ynh_replace_string "YNH_APP_MASTODON_ACCESS_TOKEN" $mastodon_access_token $settings_local
 ynh_replace_string "YNH_APP_STATIC_ROOT" $final_path/static $settings_local
 
 # Set permissions

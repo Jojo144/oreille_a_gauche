@@ -50,19 +50,12 @@
                 "example": "toot.toto.net"
             },
             {
-                "name": "mastodon_user",
-                "type": "string",
-                "ask": {
-                    "fr": "Utilisateur Mastodon"
-                },
-                "example": "toto@pouet.com"
-            },
-            {
-                "name": "mastodon_password",
+                "name": "mastodon_access_token",
                 "type": "password",
                 "ask": {
-                    "fr": "Mot de passe Mastodon"
-                }
+                    "fr": "Jeton d'accès (dans les préférences du compte mastodon)"
+                },
+                "example": "XXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXX_XXXXXXXXX"
             }
         ]
     }
