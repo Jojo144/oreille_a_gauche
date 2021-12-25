@@ -2,9 +2,9 @@
     "name": "L'oreille à gauche",
     "id": "oreille_a_gauche",
     "packaging_format": 1,
-    "version": "2019-10-07",
+    "version": "2021-12-24",
     "description": {
-        "en": "A django app.",
+        "en": "L'oreille à gauche",
         "fr": "L'oreille à gauche"
     },
     "license": "WTFPL-2.0",
@@ -15,7 +15,7 @@
     },
     "url": "https://github.com/Jojo144/oreille_a_gauche",
     "requirements": {
-        "yunohost": ">> 3.0"
+        "yunohost": ">> 4.0"
     },
     "multi_instance": true,
     "services": [
@@ -32,15 +32,15 @@
                 },
                 "example": "domain.org"
             },
-	    {
+	        {
                 "name": "email",
-                "type": "email",
+                "type": "string",
                 "ask": {
                     "en": "Choose email were send notification",
                     "fr": "Choisissez l'email vers lequel envoyer les notifications"
                 },
                 "example": "admin@example.tld"
-	    },
+	        },
             {
                 "name": "api_base_url",
                 "type": "string",
