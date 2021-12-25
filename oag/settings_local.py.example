@@ -1,8 +1,7 @@
 DEBUG = False
 
 api_base_url = 'YNH_APP_API_BASE_URL'
-mastodon_user = 'YNH_APP_MASTODON_USER',
-mastodon_password = 'YNH_APP_MASTODON_PASSWORD',
+mastodon_access_token = 'YNH_APP_MASTODON_ACCESS_TOKEN'
 
 SECRET_KEY = 'YNH_APP_SECRET_KEY'
 
